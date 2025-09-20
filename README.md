@@ -51,10 +51,10 @@ Ai-Fake-News-Detection/
 ├── images/                   # Screenshots or assets
 
 Screenshots:
-![Screenshot 1](darkmode.png)
-![Screenshot 2](brightmode.png)
-![Screenshot 3](predictionfake.png)
-![Screenshot 4](predictionreal.png)
+![Dark Mode](darkmode.png)
+![Bright Mode](brightmode.png)
+![Fake news](predictionfake.png)
+![Real news](predictionreal.png)
 
 
 Author
