@@ -50,11 +50,13 @@ Ai-Fake-News-Detection/
 ├── README.md                 # Project documentation
 ├── images/                   # Screenshots or assets
 
-Screenshots:
+
+Screenshot:
 ![Dark Mode](darkmode.png)
 ![Bright Mode](brightmode.png)
 ![Fake news](predictionfake.png)
 ![Real news](predictionreal.png)
+
 
 
 Author
