@@ -1,0 +1,200 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Fake News Detector</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    :root {
+      --bg-dark: #1a0c43;
+      --bg-light: #f8eaff;
+      --text-dark: white;
+      --text-light: black;
+      --real-green: #4CAF50;
+      --fake-red: #f44336;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Orbitron', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    body.dark {
+      background: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    body.light {
+      background: var(--bg-light);
+      color: var(--text-light);
+    }
+
+    nav {
+      width: 100%;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    nav .logo {
+      font-size: 2.5rem;
+      font-weight: 800;
+    }
+
+    .toggle-container {
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .toggle-container i {
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: inherit;
+    }
+
+    header {
+      margin: 15px 0;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+      max-width: 700px;
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    textarea {
+      width: 100%;
+      height: 200px;
+      padding: 15px;
+      border-radius: 10px;
+      resize: none;
+      font-size: 1rem;
+      margin-bottom: 20px;
+      box-sizing: border-box;
+    }
+
+    body.dark textarea {
+      background: white;
+      color: black;
+      border: 2px solid white;
+    }
+
+    body.light textarea {
+      background: transparent;
+      color: black;
+      border: 2px solid black;
+    }
+
+    button {
+      background: #0d0032c8;
+      border: 2px solid transparent;
+      padding: 12px 25px;
+      border-radius: 25px;
+      font-size: 1rem;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background: rgba(32, 32, 243, 0.137);
+      transform: scale(1.05);
+    }
+
+    .prediction-box {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .real {
+      background-color: var(--real-green);
+      color: white;
+    }
+
+    .fake {
+      background-color: var(--fake-red);
+      color: white;
+    }
+
+    footer {
+      margin-top: 30px;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body class="dark">
+  <nav>
+    <div class="logo">AI FAKE NEWS DETECTOR</div>
+    <div class="toggle-container">
+      <i class="fas fa-moon" id="darkModeToggle"></i>
+    </div>
+  </nav>
+
+  <header>
+    <p>"The cause is AI, the cure is AI."</p>
+  </header>
+
+  <div class="container">
+    <h2>Enter News to Verify</h2>
+    <form method="POST">
+      <textarea name="news_text" placeholder="Paste the news headline or text here..."></textarea>
+      <br>
+      <button type="submit">Check Authenticity</button>
+    </form>
+
+    {% if prediction %}
+      <div class="prediction-box {% if prediction=='Real' %}real{% else %}fake{% endif %}">
+        Prediction: {{ prediction }}
+      </div>
+    {% endif %}
+  </div>
+
+  <footer>
+    <p>Prototype Version</p>
+  </footer>
+
+  <script>
+    const toggleIcon = document.getElementById("darkModeToggle");
+    const body = document.body;
+
+    toggleIcon.addEventListener("click", () => {
+      body.classList.toggle("dark");
+      body.classList.toggle("light");
+
+      if (body.classList.contains("light")) {
+        toggleIcon.classList.remove("fa-moon");
+        toggleIcon.classList.add("fa-sun");
+      } else {
+        toggleIcon.classList.remove("fa-sun");
+        toggleIcon.classList.add("fa-moon");
+      }
+    });
+  </script>
+</body>
+</html>
