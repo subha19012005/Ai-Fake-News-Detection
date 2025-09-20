@@ -51,10 +51,11 @@ Ai-Fake-News-Detection/
 ├── images/                   # Screenshots or assets
 
 Screenshots:
-<img width="952" height="503" alt="image" src="https://github.com/user-attachments/assets/b236cead-0c4f-4cd3-ae7e-90d205b665d5" />
-<img width="959" height="506" alt="image" src="https://github.com/user-attachments/assets/0ce82c2d-5bdd-4bb1-abcb-cb73591dfcba" />
-<img width="939" height="506" alt="image" src="https://github.com/user-attachments/assets/de99bc00-e25a-4f4a-b240-25e087782a1d" />
-<img width="938" height="503" alt="image" src="https://github.com/user-attachments/assets/d9898a13-3016-408f-9ebc-5c32ae2ae840" />
+![Screenshot 1](darkmode.png)
+![Screenshot 2](brightmode.png)
+![Screenshot 3](predictionfake.png)
+![Screenshot 4](predictionreal.png)
+
 
 Author
 P.Subha Paramesh -B.E. CSE Student
@@ -63,6 +64,7 @@ License
 
 This project is licensed under the MIT License – see the LICENSE
  file for details.
+
 
 
 
